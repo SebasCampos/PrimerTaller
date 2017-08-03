@@ -29,7 +29,6 @@ public class MenuLibros extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         add = new javax.swing.JButton();
-        buy = new javax.swing.JButton();
         salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,13 +39,6 @@ public class MenuLibros extends javax.swing.JFrame {
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addActionPerformed(evt);
-            }
-        });
-
-        buy.setText("Adquirir");
-        buy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyActionPerformed(evt);
             }
         });
 
@@ -71,9 +63,7 @@ public class MenuLibros extends javax.swing.JFrame {
                         .addComponent(add))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(146, 146, 146)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(buy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(185, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,9 +73,7 @@ public class MenuLibros extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(34, 34, 34)
                 .addComponent(add)
-                .addGap(18, 18, 18)
-                .addComponent(buy)
-                .addGap(18, 18, 18)
+                .addGap(59, 59, 59)
                 .addComponent(salir)
                 .addContainerGap(97, Short.MAX_VALUE))
         );
@@ -98,10 +86,6 @@ public class MenuLibros extends javax.swing.JFrame {
         y.setVisible(true);
         dispose();
     }//GEN-LAST:event_addActionPerformed
-
-    private void buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buyActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         Menu o = new Menu();
@@ -146,7 +130,6 @@ public class MenuLibros extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add;
-    private javax.swing.JButton buy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables

@@ -6,6 +6,10 @@
 package primertaller;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,7 +38,16 @@ public class Libros extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         showcount = new javax.swing.JTextField();
         salir = new javax.swing.JButton();
-        show = new javax.swing.JButton();
+        get = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        alqui = new javax.swing.JButton();
+        b = new javax.swing.JTextField();
+        a = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lista = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,12 +79,29 @@ public class Libros extends javax.swing.JFrame {
             }
         });
 
-        show.setText("Mostrar");
-        show.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Comprar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
+
+        alqui.setText("Alquilar");
+        alqui.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alquiActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Digite el nombre del libro a comprar");
+
+        jLabel3.setText("Comprados");
+
+        jLabel4.setText("Alquilados");
+
+        lista.setColumns(20);
+        lista.setRows(5);
+        jScrollPane1.setViewportView(lista);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,7 +110,7 @@ public class Libros extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addGap(115, 115, 115)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(book, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -90,13 +120,32 @@ public class Libros extends javax.swing.JFrame {
                                 .addGap(12, 12, 12)
                                 .addComponent(jLabel1)
                                 .addGap(39, 39, 39)
-                                .addComponent(showcount, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(show))))
+                                .addComponent(showcount, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(101, 101, 101)
+                                .addComponent(salir))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(salir)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                        .addGap(406, 406, 406)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(b, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(69, 69, 69)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(alqui, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(a, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(346, 346, 346)))
+                .addContainerGap(140, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(get, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(132, 132, 132))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,12 +154,32 @@ public class Libros extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(book, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addbook))
-                .addGap(60, 60, 60)
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(showcount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(show))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                    .addComponent(showcount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(get, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(alqui))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                 .addComponent(salir)
                 .addGap(19, 19, 19))
         );
@@ -121,19 +190,23 @@ public class Libros extends javax.swing.JFrame {
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         DatosLibros j = new DatosLibros();
         j.add(titulos);
-        Menu l = new Menu();
+        MenuLibros l = new MenuLibros();
         l.setVisible(true);
         dispose();
     }//GEN-LAST:event_salirActionPerformed
 
     private void addbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbookActionPerformed
-       
-        
+        titulos.add(lista.getText());
         titulos.add(book.getText());
         book.setText("");
-        
-        
-        
+        showcount.setText(Integer.toString(titulos.size()));
+        Collections.sort(titulos);
+        for (int i = 0; i < titulos.size(); i++) {
+            lista.setText(titulos.get(i)+System.lineSeparator());
+            
+        }
+       
+  
     }//GEN-LAST:event_addbookActionPerformed
 
     private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
@@ -144,12 +217,15 @@ public class Libros extends javax.swing.JFrame {
         
     }//GEN-LAST:event_showcountActionPerformed
 
-    private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
-        DatosLibros t = new DatosLibros();
-        
-        showcount.setText(Integer.toString(t.cantLibros(titulos)));
-        
-    }//GEN-LAST:event_showActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       compra.add(get.getText());
+       b.setText(Integer.toString(compra.size()));
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void alquiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alquiActionPerformed
+        alquila.add(get.getText());
+        a.setText(Integer.toString(alquila.size()));
+    }//GEN-LAST:event_alquiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,12 +262,23 @@ public class Libros extends javax.swing.JFrame {
         });
     }
     ArrayList<String> titulos = new ArrayList<>();
+    ArrayList<String>compra = new ArrayList<>();
+    ArrayList<String> alquila = new ArrayList<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField a;
     private javax.swing.JButton addbook;
+    private javax.swing.JButton alqui;
+    private javax.swing.JTextField b;
     private javax.swing.JTextField book;
+    private javax.swing.JTextField get;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea lista;
     private javax.swing.JButton salir;
-    private javax.swing.JButton show;
     private javax.swing.JTextField showcount;
     // End of variables declaration//GEN-END:variables
 }
